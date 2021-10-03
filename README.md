@@ -25,7 +25,7 @@ See below the exact provided Input, required Output and the main structure of yo
 
 The (text) test files for this assignment will contain one Json structure with the initial game information + a simulation of the competitors behaviour, in the form of a list of occupied locations after each turn. An occupied location is a location where, at the end of the current turn, at least one group is present. When the update list ends, all locations count as free (unoccupied).
 
-```json
+```json5
 {
   "Locations": {
     "number":4, // total number of locations on the map, max. 88 
