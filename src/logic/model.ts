@@ -23,15 +23,15 @@ export interface TurnInfo {
 
 export interface InputData {
   locations: {
-    number: number,
+    number: number
     critical: number[]
   },
   connections: {
-    source: number[],
-    target: number[],
+    source: number[]
+    target: number[]
     price: number[]
   }
-  StartLocation: number,
-  Budget: number,
+  StartLocation: number
+  Budget: number
   OccupiedLocationsAfterEachTurn: number[][]
 }

@@ -17,7 +17,7 @@ export function inputDataToGameData(input: InputData): [GameData, TurnInfo] {
     vertices[id] = {
       id: id,
       edges: [],
-      critical: Locations.critical.includes(i),
+      critical: Locations.critical.includes(id),
       occupied: {}
     }
   }
