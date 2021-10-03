@@ -19,7 +19,8 @@ describe('makeTurn', () => {
 
     const result = makeTurn({
       position: initialTurn.position,
-      budget: 0
+      budget: 0,
+      usedEdge: null
     }, 0)
 
     expect(result.position.id).toBe(1)
@@ -43,7 +44,8 @@ describe('makeTurn', () => {
 
     const result = makeTurn({
       position: initialTurn.position,
-      budget: 0
+      budget: 0,
+      usedEdge: null
     }, 0)
 
     expect(result.position.id).toBe(1)
@@ -67,7 +69,8 @@ describe('makeTurn', () => {
 
     const result = makeTurn({
       position: initialTurn.position,
-      budget: 0
+      budget: 0,
+      usedEdge: null
     }, 0)
 
     expect(result.position.id).toBe(3)
@@ -91,7 +94,8 @@ describe('makeTurn', () => {
 
     const result = makeTurn({
       position: initialTurn.position,
-      budget: 0
+      budget: 0,
+      usedEdge: null
     }, 0)
 
     expect(result.position.id).toBe(2)
@@ -116,7 +120,8 @@ describe('makeTurn', () => {
     expect(() => {
       makeTurn({
         position: initialTurn.position,
-        budget: 0
+        budget: 0,
+        usedEdge: null
       }, 0)
     }).toThrow()
   })
