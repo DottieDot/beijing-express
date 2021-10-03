@@ -21,7 +21,10 @@ class Node {
     for (let node: Node|null = this; node; node = node.previous) {
       result.push({
         position: node.vertex,
-        budget: node.budget
+        budget: node.budget,
+        usedEdge: node.previous?.vertex.edges.find(e => {
+          return e.destination === node?.vertex
+        }) ?? null
       })
     }
 

@@ -19,6 +19,7 @@ export interface GameData {
 export interface TurnInfo {
   position: Vertex 
   budget: number
+  usedEdge: Edge | null
 }
 
 export interface InputData {
@@ -31,7 +32,7 @@ export interface InputData {
     target: number[]
     price: number[]
   }
-  StartLocation: number
-  Budget: number
-  OccupiedLocationsAfterEachTurn: number[][]
+  startLocation: number
+  budget: number
+  occupiedLocationsAfterEachTurn: number[][]
 }
