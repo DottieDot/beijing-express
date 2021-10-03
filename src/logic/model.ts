@@ -1,7 +1,7 @@
 
 export interface Edge {
-  vertex1: Vertex
-  vertex2: Vertex
+  source: Vertex
+  destination: Vertex
   price: number
 }
 
@@ -19,5 +19,20 @@ export interface GameData {
 export interface TurnInfo {
   position: Vertex 
   budget: number
+  usedEdge: Edge | null
 }
 
+export interface InputData {
+  locations: {
+    number: number
+    critical: number[]
+  },
+  connections: {
+    source: number[]
+    target: number[]
+    price: number[]
+  }
+  startLocation: number
+  budget: number
+  occupiedLocationsAfterEachTurn: number[][]
+}
