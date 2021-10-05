@@ -30,6 +30,10 @@ class Node {
 
     return result.reverse()
   }
+
+  hasVisitedVertex(vertex: Vertex): boolean {
+    return this.toTurnList().findIndex(t => t.position === vertex) !== -1
+  }
 }
 
 export function makeTurn(turnInfo: TurnInfo, turn: number): TurnInfo {
@@ -49,6 +53,7 @@ export function makeTurn(turnInfo: TurnInfo, turn: number): TurnInfo {
 
     const viable = vertex.edges
       .filter(({ price }) => price <= budget)
+      .filter(({ destination }) => !node.hasVisitedVertex(destination))
       .filter(({ destination, price }) => {
         if (vertex === turnInfo.position && destination.critical && destination.occupied[turn]) {
           const waitingNode = new Node(node.vertex, node, budget)

@@ -13,6 +13,8 @@ export default function Visualization({ inputData }: { inputData: InputData }) {
   const graph = useMemo(() => gameDataToGraphData(gameData, turn, turns[turn - 1], theme), [gameData, theme, turns, turn])
 
   useEffect(() => {
+    console.log(turns.map(t => t.position.id))
+
     setTurn(1)
   }, [turns])
 

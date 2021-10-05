@@ -157,7 +157,7 @@ describe('beijingExpress', () => {
 
     const result = beijingExpress(initialTurn)
 
-    expect(result.map(t => t.position.id)).toStrictEqual([8,30,16,24,34,9,88])
+    expect(result.map(t => t.position.id)).toStrictEqual([8,30,16,24,38,9,88])
   })
   
   test('5', () => {
@@ -180,5 +180,13 @@ describe('beijingExpress', () => {
     const result = beijingExpress(initialTurn)
 
     expect(result.map(t => t.position.id)).toStrictEqual([11, 2, 22, 88])
+  })
+
+  test('2-2', () => {
+    const [, initialTurn] = inputDataToGameData({"locations": {"number": 10, "critical": [3, 2, 6]}, "connections": {"source": [3, 1, 4, 9, 8, 3, 1, 3, 2, 1], "target": [5, 8, 5, 7, 5, 88, 7, 8, 88, 4], "price": [1, 8, 1, 7, 2, 6, 5, 4, 3, 2]}, "startLocation": 9, "budget": 25, "occupiedLocationsAfterEachTurn": [[5], [4], [1], [7], [1, 9], [8], [1, 5], [7], [1], [4]]})
+
+    const result = beijingExpress(initialTurn)
+
+    expect(result.map(t => t.position.id)).toStrictEqual([9, 7, 1, 4, 5, 3, 88])
   })
 })

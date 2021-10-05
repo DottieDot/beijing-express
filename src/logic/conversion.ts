@@ -32,6 +32,11 @@ export function inputDataToGameData(input: InputData): [GameData, TurnInfo] {
       destination: vertices[target],
       price
     })
+    vertices[target].edges.push({
+      source: vertices[target],
+      destination: vertices[source],
+      price
+    })
   }
 
   OccupiedLocationsAfterEachTurn.forEach((locations, turn) => {
